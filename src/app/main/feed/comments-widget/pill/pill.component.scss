@@ -1,0 +1,25 @@
+@import "/src/styles/styles";
+.cont-pill {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  //   overflow-y: scroll;
+}
+
+.cont-comment-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.comment-pill {
+  padding: 0.5rem;
+  background-color: $color-grey-lightest;
+  border-radius: 0.5rem;
+}
+.cont-time {
+  display: flex;
+  justify-content: right;
+  user-select: none;
+}

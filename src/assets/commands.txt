@@ -1,0 +1,18 @@
+
+Sass commands
+
+mkdir sass
+cd sass
+md abstracts, base, component, layout
+cd abstracts
+ni _functions.scss, _mixins.scss, _variables.scss
+
+cd ../base
+
+ni _animations.scss, _base.scss, _typography.scss
+
+cd ../component
+ni _component.scss
+
+cd ../layout
+ni _layout.scss

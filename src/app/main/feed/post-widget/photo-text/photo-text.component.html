@@ -1,0 +1,31 @@
+<div class="photo-text-cont" #parent>
+  <div class="photo-cont">
+    <img
+      src="https://images.pexels.com/photos/19376990/pexels-photo-19376990/free-photo-of-the-nature-of-kuantan-nanami-jujutsu-kaisen-want-come-here-for-retired.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      alt="photo"
+      #image
+      (click)="onClick(image, parent)"
+    />
+    <div class="cont-preview-photo" *ngIf="selectedImage">
+      <svg
+        class="icon-close"
+        (click)="selectedImage = ''"
+        xmlns="http://www.w3.org/2000/svg"
+        height="24"
+        viewBox="0 -960 960 960"
+        width="24"
+      >
+        <path
+          d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+        />
+      </svg>
+      <img
+        #preview
+        [src]="selectedImage"
+        alt="photo"
+        id="preview"
+        (loadStart)="onLoad(preview)"
+      />
+    </div>
+  </div>
+</div>

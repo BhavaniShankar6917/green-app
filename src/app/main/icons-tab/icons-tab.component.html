@@ -1,0 +1,176 @@
+<div class="cont-icons-tab" *ngIf="!writeSomethingSelected">
+  <ul class="list-icons">
+    <li class="icon icon-write-something">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        height="48"
+        viewBox="0 -960 960 960"
+        width="48"
+        style="scale: 0.5"
+        (click)="writeSomethingSelected = true"
+      >
+        <path
+          d="M321-160q-24 0-42-18t-18-42v-100h124v-127q-38 3-76-10.5T241-500v-58h-50L60-689q36-34 86-55.5T248-766q30 0 68.5 9.5T385-726v-74h455v535q0 44-30.5 74.5T735-160H321Zm124-160h245v55q0 20 12.5 32.5T735-220q20 0 32.5-12.5T780-265v-475H445v57l241 241v43h-43L517-525l-17 20q-13 15-26 23t-29 15v147ZM218-618h83v89q17 11 33.5 16.5T368-507q25 0 51-13.5t38-27.5l17-20-69-69q-32-32-72-50.5T248-706q-27 0-49 6.5T154-682l64 64Zm412 358H321v40h323q-6-6-10-16.5t-4-23.5Zm-309 40v-40 40Z"
+        />
+      </svg>
+    </li>
+    <li class="icon icon-post-something">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        height="48"
+        viewBox="0 -960 960 960"
+        width="48"
+        style="scale: 0.4"
+        (click)="postSomethingSelected = true"
+      >
+        <path
+          d="M440-437ZM100-120q-24 0-42-18t-18-42v-513q0-23 18-41.5t42-18.5h147l73-87h274v60H348l-73 87H100v513h680v-414h60v414q0 24-18.5 42T780-120H100Zm680-574v-86h-86v-60h86v-87h60v87h87v60h-87v86h-60ZM439.5-267q72.5 0 121.5-49t49-121.5q0-72.5-49-121T439.5-607q-72.5 0-121 48.5t-48.5 121q0 72.5 48.5 121.5t121 49Zm0-60q-47.5 0-78.5-31.5t-31-79q0-47.5 31-78.5t78.5-31q47.5 0 79 31t31.5 78.5q0 47.5-31.5 79t-79 31.5Z"
+        />
+      </svg>
+    </li>
+    <li class="icon icon-refresh">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        height="48"
+        viewBox="0 -960 960 960"
+        width="48"
+        style="scale: 0.5"
+      >
+        <path
+          d="M480-160q-133 0-226.5-93.5T160-480q0-133 93.5-226.5T480-800q85 0 149 34.5T740-671v-129h60v254H546v-60h168q-38-60-97-97t-137-37q-109 0-184.5 75.5T220-480q0 109 75.5 184.5T480-220q83 0 152-47.5T728-393h62q-29 105-115 169t-195 64Z"
+        />
+      </svg>
+    </li>
+  </ul>
+</div>
+
+<div class="cont-write-something" *ngIf="writeSomethingSelected">
+  <div class="cont-icon-close close-write-something">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      height="48"
+      viewBox="0 -960 960 960"
+      width="48"
+      class="icon-close"
+      (click)="writeSomethingSelected = false; iconsTabVisible = true"
+    >
+      <path
+        d="m249-207-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"
+      />
+    </svg>
+  </div>
+  <form class="write-something">
+    <div class="pic-small-circle">
+      <img
+        src="https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+        alt="dp"
+      />
+    </div>
+    <textarea
+      name="write-something"
+      id="write-something"
+      class="textarea w-regular"
+      placeholder="write something..."
+      cols="30"
+      rows="2"
+    ></textarea>
+    <button class="btn-dark-green">post</button>
+  </form>
+</div>
+
+<div class="cont-post-something" *ngIf="postSomethingSelected">
+  <div class="cont-icon-close close-post-something">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      height="48"
+      viewBox="0 -960 960 960"
+      width="48"
+      class="icon-close"
+      (click)="postSomethingSelected = false; iconsTabVisible = true"
+    >
+      <path
+        d="m249-207-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"
+      />
+    </svg>
+  </div>
+  <div class="post-something">
+    <div class="cont-user-info">
+      <div class="pic-small-circle">
+        <img
+          src="https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+          alt="dp"
+        />
+      </div>
+      <div class="cont-names">
+        <h2 class="display-name w-medium">Bhavani</h2>
+        <p class="username w-small">@bhavanishankar</p>
+      </div>
+    </div>
+    <div class="cont-post-form">
+      <form action="" class="post-form" [formGroup]="upload" #f="ngForm">
+        <div
+          class="cont-upload-image"
+          [class.display-none]="uploadedImage"
+          *ngIf="!uploadedImage"
+        >
+          <p class="w-regular">Add a Photo</p>
+          <input
+            type="file"
+            accept="image/*"
+            class="photo-input"
+            id="photo-input"
+            formControlName="image"
+            (input)="previewImage($event); createImageForUpload($event)"
+          />
+          <label for="photo-input" class="color-green click-here"
+            >Click here</label
+          >
+          <p class="w-small">file size should be < 500kb</p>
+        </div>
+        <div class="cont-uploaded-image" *ngIf="uploadedImage">
+          <img [src]="uploadedImage" alt="post" class="uploaded-image" />
+          <div class="blur">
+            <p>Remove this photo</p>
+            <br />
+            <div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-trash-fill"
+                viewBox="0 0 16 16"
+                style="scale: 1.5"
+              >
+                <path
+                  d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="cont-text-and-button">
+          <div
+            name="post-something"
+            id="post-something"
+            cols="50"
+            rows="10"
+            contenteditable="true"
+            class="textarea"
+            placeholder="write something..."
+            formcontrolname="caption"
+            #caption
+          ></div>
+        </div>
+        <button
+          class="btn-dark-green"
+          type="submit"
+          #submit
+          (click)="addPostWithImage(caption.innerText)"
+        >
+          Post
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

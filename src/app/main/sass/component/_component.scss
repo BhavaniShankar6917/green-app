@@ -1,0 +1,27 @@
+nav {
+  color: #fff;
+  background: rgb(43, 138, 62);
+  background: linear-gradient(
+    90deg,
+    rgb(43, 138, 62) 0%,
+    #24e321 35%,
+    rgba(105, 219, 124, 1) 100%
+  );
+  margin: 0;
+  min-width: 350px;
+  min-height: 30px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+nav h1 {
+  padding-top: 20px;
+  margin: 0;
+  color: #fff;
+  /* margin-left: 8px; */
+  font-weight: 600;
+  font-size: $font-large;
+  text-align: center;
+  user-select: none;
+}

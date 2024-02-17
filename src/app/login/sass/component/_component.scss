@@ -1,0 +1,24 @@
+.login-img {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  background: url(https://images.pexels.com/photos/7211760/pexels-photo-7211760.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+  background-size: cover;
+  &-blur {
+    width: 100%;
+    min-height: 100vh;
+    background: rgba(0, 0, 0, 0.3);
+  }
+}
+.logo {
+  @include center-absolute; //global
+  color: $color-green; //global
+  font-size: $font-extra-large; //global
+  user-select: none;
+}
+.cont-dialog {
+  min-height: 100vh;
+  position: relative;
+  box-sizing: content-box;
+  height: 100%;
+}

@@ -1,0 +1,38 @@
+* {
+  font-family: "Figtree", sans-serif;
+}
+::selection {
+  background: #24e321;
+  color: #fff;
+}
+.green-font {
+  font-family: $cursive-green-font-family; //global
+  color: $color-green;
+}
+.green-color-font {
+  color: $color-green;
+}
+.color-green {
+  color: $color-green;
+}
+.w-large {
+  font-size: $font-large;
+}
+.w-medium {
+  font-size: $font-medium;
+}
+.w-regular {
+  font-size: $font-regular;
+}
+.w-small {
+  font-size: $font-small;
+}
+.w-smaller {
+  font-size: $font-smaller;
+}
+.w-thin {
+  font-weight: lighter;
+}
+.w-bold {
+  font-weight: bolder;
+}

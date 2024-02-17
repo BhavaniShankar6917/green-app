@@ -1,0 +1,8 @@
+.cont-main {
+  display: grid;
+  grid-template-columns: 20% 50% 30%;
+}
+.cont-main-section {
+  display: flex;
+  flex-direction: column;
+}

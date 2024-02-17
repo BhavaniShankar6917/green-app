@@ -1,0 +1,81 @@
+.btn-dark-green,
+.btn-small-dark {
+  border-radius: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.1ch;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  &:hover {
+    cursor: pointer;
+    color: $color-green;
+  }
+}
+.btn-dark-green {
+  padding: 0.7rem 2rem;
+}
+.btn-small-dark {
+  padding: 0.3rem 0.6rem;
+}
+.hover-fill {
+  color: $color-green;
+  &:hover {
+    cursor: pointer;
+    color: #fff;
+    background-color: $color-green;
+  }
+}
+.hover-light-grey {
+  &:hover {
+    background-color: $color-grey-light;
+  }
+}
+.pic-large-circle {
+  display: flex;
+  align-items: center;
+  & > img {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+  }
+}
+.pic-circle-dashed-border {
+  padding: 0.3rem;
+  border: 2px dashed $color-green;
+  border-radius: 50%;
+}
+.pic-regular-circle {
+  display: flex;
+  align-items: center;
+  & > img {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+  }
+}
+.pic-small-circle {
+  display: flex;
+  align-items: center;
+  & > img {
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 50%;
+  }
+}
+.display-none {
+  display: none;
+}
+.icon-hover {
+  &:hover {
+    background-image: linear-gradient(
+      rgba($color-grey-light, 0.5),
+      rgba($color-grey-light, 0.5)
+    );
+    cursor: pointer;
+    border-radius: 50%;
+  }
+}
+.pill-shadow-border {
+  box-shadow: inset 0 0 10px rgba($color-green, 0.1);
+  border: 1px solid $color-grey-regular;
+}

@@ -1,0 +1,124 @@
+@import "../base/animations";
+.icon {
+  position: relative;
+  display: inline-flex;
+  border-radius: 50%;
+  &:hover {
+    cursor: pointer;
+    background-image: linear-gradient(
+      rgba($color-grey-light, 0.5),
+      rgba($color-grey-light, 0.5)
+    );
+  }
+  &:last-child {
+    position: absolute;
+    display: inline-block;
+    right: 1%;
+  }
+}
+.icon {
+  transition: all 0.3s;
+}
+.icon-write-something:hover {
+  &:after {
+    content: "Write Something";
+  }
+}
+.icon:active,
+.icon:active {
+  scale: 0.9;
+}
+.icon-post-something:hover {
+  &:after {
+    content: "Post Something";
+  }
+}
+.icon-refresh:hover {
+  &:after {
+    content: "Refresh";
+  }
+}
+.icon-write-something:hover,
+.icon-post-something:hover,
+.icon-refresh:hover {
+  &::after {
+    position: absolute;
+
+    color: #fff;
+    font-size: 12px;
+    background-color: #000;
+    padding: 5px 10px;
+    border-radius: 5px;
+    top: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+.textarea {
+  resize: none;
+  width: 100%;
+  min-height: 250px;
+  height: auto;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  border: 2px solid $color-grey-light;
+}
+.cont-write-something {
+  transition: margin-bottom 0.2s;
+}
+.write-something {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.icon-close {
+  scale: 0.4;
+  &:hover {
+    cursor: pointer;
+  }
+}
+.cont-post-something {
+  padding: 2rem;
+  border-radius: 50px;
+  box-shadow: 0 0 3px 99999px rgba(0, 0, 0, 0.5);
+
+  transform: translate(-50%, -50%);
+
+  transform-origin: 0% 0%;
+  animation: zoomin 0.4s ease-in-out;
+}
+.click-here {
+  cursor: pointer;
+}
+.close-write-something {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.close-post-something {
+  scale: 1.5;
+  position: absolute;
+  top: 4%;
+  right: 4%;
+}
+.uploaded-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-width: 450px;
+  max-height: auto;
+  margin: 0;
+  border-radius: 25px;
+}
+.cont-uploaded-image {
+  position: relative;
+  & .blur {
+    display: none;
+    color: #fff;
+    opacity: 0;
+  }
+}
+.cont-write-something {
+  animation: fadein 0.2s ease-in-out;
+}

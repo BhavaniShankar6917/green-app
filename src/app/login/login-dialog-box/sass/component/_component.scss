@@ -1,0 +1,80 @@
+.dialog {
+  position: absolute;
+  padding: 2.5rem;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  transition: 0.2s all;
+  animation: fadein 0.25s ease-in;
+  min-width: 400px;
+  border-radius: 50px;
+  border: 1px solid $color-green;
+  box-shadow: 10px 5px $color-green;
+}
+
+.title {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.form {
+  margin-bottom: 2rem;
+}
+.cont-input {
+  display: flex;
+  max-width: 20rem;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+.input-label {
+  font-size: $font-small;
+}
+.input {
+  border-radius: 50px;
+  padding: 0.5rem;
+  width: 100%;
+  border: 1px solid $color-grey-regular;
+  padding: 10px;
+  &::placeholder {
+    color: $color-grey-regular;
+  }
+
+  &:focus {
+    outline: none;
+    border: 1px solid $color-green;
+  }
+}
+.input-invalid {
+  border: 1px solid $color-red;
+}
+.cont-input-email {
+  border: none;
+  border-radius: 50px;
+}
+.invalid {
+  color: $color-red;
+}
+.cont-input-password {
+  position: relative;
+}
+.cont-input-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 3px;
+  width: 37px;
+  height: 37px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:hover {
+    cursor: pointer;
+    transform: translateY(-20px);
+    filter: drop-shadow(black, 0px);
+  }
+  &:active {
+    transform: translateY(-18px);
+  }
+}
