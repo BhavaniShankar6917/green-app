@@ -27,7 +27,8 @@
 }
 .hover-light-grey {
   &:hover {
-    background-color: $color-grey-light;
+    background-color: rgba($color-grey-light, 0.6);
+    cursor: pointer;
   }
 }
 .pic-large-circle {

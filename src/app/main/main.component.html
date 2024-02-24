@@ -2,13 +2,12 @@
   <h1 class="green-font">Green</h1>
 </nav>
 <div class="cont-main">
-  <app-left-bar></app-left-bar>
+  <app-left-bar (homeClicked)="onHomeClicked($event)"></app-left-bar>
   <div class="cont-main-section">
     <app-icons-tab></app-icons-tab>
     <div class="cont-feed-section">
-      <app-feed></app-feed>
+      <app-feed [postData]="data"></app-feed>
     </div>
   </div>
   <app-explore></app-explore>
 </div>
-<button (click)="createUser()">Logout</button>

@@ -5,4 +5,12 @@
 .cont-main-section {
   display: flex;
   flex-direction: column;
+  position: relative;
+  overflow-y: scroll;
+  max-height: calc(100vh - 48px);
+  // & > app-icons-tab {
+  //   position: fixed;
+  //   display: flex;
+  //   min-width: 100%;
+  // }
 }

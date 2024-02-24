@@ -1,7 +1,8 @@
 <div class="photo-text-cont" #parent>
   <div class="photo-cont">
     <img
-      src="https://images.pexels.com/photos/19376990/pexels-photo-19376990/free-photo-of-the-nature-of-kuantan-nanami-jujutsu-kaisen-want-come-here-for-retired.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      *ngIf="photoURL"
+      [attr.src]="photoURL"
       alt="photo"
       #image
       (click)="onClick(image, parent)"
@@ -27,5 +28,8 @@
         (loadStart)="onLoad(preview)"
       />
     </div>
+  </div>
+  <div class="text-cont">
+    <p>{{ caption }}</p>
   </div>
 </div>

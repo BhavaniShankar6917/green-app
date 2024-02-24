@@ -12,7 +12,7 @@ import { Observable } from "rxjs";
 })
 export class SupabaseService {
   private supabase: SupabaseClient;
-
+  content: any;
   constructor(
     private route: Router,
     private nest: NestService,
@@ -103,22 +103,22 @@ export class SupabaseService {
     // console.log(error);
   }
 
-  async getFeedForUser(username: string) {
-    // let arr = [username];
-    // return await this.supabase
-    //   .from('posts')
-    //   .select(
-    //     `id,caption,photo_url,created_at, likes, users:users_id(username, display_name)`
-    //   )
-    //   .in(
-    //     'users_id',
-    //     arr.concat(
-    //       (
-    //         await this.getFollowing(username)
-    //       ).data?.map((user) => user.following) as Array<string>
-    //     )
-    //   )
-    //   .order('created_at', { ascending: false });
+  async getFeedForUser() {
+    let response = await this.http.get("http://localhost:3000/posts/feed", {
+      withCredentials: true,
+    });
+    response.subscribe((next) => {
+      console.log(next, typeof next);
+    });
+  }
+  async getPostsOfOneUser() {
+    // let content;
+    return await this.http.get(
+      "http://localhost:3000/posts/755edc7a-a9bc-4d9d-a573-03d4fe5fd759",
+      {
+        withCredentials: true,
+      }
+    );
   }
   async getLikesInfo(postid: number, username: string) {
     return await this.supabase

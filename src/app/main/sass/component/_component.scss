@@ -24,4 +24,11 @@ nav h1 {
   font-size: $font-large;
   text-align: center;
   user-select: none;
+  -webkit-user-select: none;
+}
+app-left-bar,
+app-explore {
+  // position: fixed;
+  min-height: calc(100vh - 48px);
+  max-height: calc(100vh - 48px);
 }
