@@ -1,9 +1,11 @@
 import { Component, Input, Output } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { LikesComponent } from "./likes/likes.component";
-import { PhotoTextComponent } from "./photo-text/photo-text.component";
 import { ProfileInfoComponent } from "./profile-info/profile-info.component";
 import { PostData, CaptionAndPhotoURL } from "src/app/types/post-data-types";
+import { ServerStreamFileResponseOptions } from "http2";
+import { PhotoComponent } from "./photo/photo.component";
+import { CaptionComponent } from "./caption/caption.component";
 
 @Component({
   selector: "app-post-widget",
@@ -11,7 +13,8 @@ import { PostData, CaptionAndPhotoURL } from "src/app/types/post-data-types";
   imports: [
     CommonModule,
     LikesComponent,
-    PhotoTextComponent,
+    PhotoComponent,
+    CaptionComponent,
     ProfileInfoComponent,
   ],
   templateUrl: "./post-widget.component.html",
@@ -20,13 +23,12 @@ import { PostData, CaptionAndPhotoURL } from "src/app/types/post-data-types";
 export class PostWidgetComponent {
   @Output() outputPostData!: PostData;
   @Output() likes!: number;
-  @Output() captionAndPhotoURL!: CaptionAndPhotoURL;
+  @Output() caption!: string;
+  @Output() photo_url!: string | null;
   @Input() set postData(value: PostData) {
     this.outputPostData = value;
     this.likes = value.likes;
-    this.captionAndPhotoURL = {
-      caption: value.caption,
-      photo_url: value.photo_url as string,
-    };
+    this.caption = value.caption;
+    this.photo_url = value.photo_url;
   }
 }

@@ -3,7 +3,14 @@
   flex-direction: column;
   gap: 0.5rem;
   padding: 1.5rem;
+  position: relative;
+  min-height: 100%;
 }
+.cont-pill:last-child {
+  position: absolute;
+  bottom: 1.5rem;
+}
+
 .cont-pill {
   display: flex;
   align-items: center;

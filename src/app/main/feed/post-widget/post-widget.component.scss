@@ -5,3 +5,11 @@
   flex-direction: column;
   width: 100%;
 }
+.cont-post-widget:hover :not(.hover-excluded) {
+  // background-color: #fcfcfc;
+  // background-color: #eedea2;
+  cursor: pointer;
+}
+.photo-caption-cont {
+  width: 100% !important;
+}

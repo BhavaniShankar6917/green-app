@@ -1,5 +1,9 @@
 <div class="cont-post-widget">
   <app-profile-info></app-profile-info>
-  <app-photo-text [captionAndPhotoData]="captionAndPhotoURL"></app-photo-text>
+  <!-- <app-photo-text [captionAndPhotoData]="captionAndPhotoURL"></app-photo-text> -->
+  <div class="photo-caption-cont">
+    <app-photo [photoUrlData]="photo_url" class="hover-excluded"></app-photo>
+    <app-caption [captionData]="caption"></app-caption>
+  </div>
   <app-likes [likes]="likes"></app-likes>
 </div>

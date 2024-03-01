@@ -1,27 +1,23 @@
 import { Component, Input } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { CaptionAndPhotoURL } from "src/app/types/post-data-types";
 
 @Component({
-  selector: "app-photo-text",
+  selector: "app-photo",
   standalone: true,
   imports: [CommonModule],
-  templateUrl: "./photo-text.component.html",
-  styleUrls: ["./photo-text.component.scss"],
+  templateUrl: "./photo.component.html",
+  styleUrls: ["./photo.component.scss"],
 })
-export class PhotoTextComponent {
+export class PhotoComponent {
   selectedImage!: string;
   coordinates!: string;
-  caption: string = "";
-  photoURL: string = "";
-  @Input() set captionAndPhotoData(value: CaptionAndPhotoURL) {
-    this.caption = value.caption;
-    this.photoURL = value.photo_url == null ? "" : value.photo_url;
-    console.log(this.photoURL, value.photo_url);
+  photoURL!: string | null;
+  @Input() set photoUrlData(value: string | null) {
+    this.photoURL = value == null ? "" : value;
   }
 
   // previewPhoto: HTMLImageElement = document.getElementById("preview");
-  onClick(i: HTMLImageElement, s?: HTMLElement) {
+  onClick(i: HTMLImageElement) {
     this.coordinates = `${i.getBoundingClientRect().left} ${
       i.getBoundingClientRect().top
     }`;
