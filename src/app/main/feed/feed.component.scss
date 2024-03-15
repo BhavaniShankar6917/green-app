@@ -1,4 +1,15 @@
 .cont-feed {
   display: flex;
   flex-direction: column;
+  position: relative;
+}
+app-image-select {
+  position: absolute;
+  min-height: 100vh;
+  max-height: 100vh;
+  min-width: 100vw;
+}
+.display-none {
+  display: none;
+  z-index: -1;
 }

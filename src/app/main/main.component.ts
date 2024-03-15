@@ -14,6 +14,8 @@ import { ExploreComponent } from "./explore/explore.component";
 import { NestService } from "../services/nest.service";
 import { LeftBarComponent } from "./left-bar/left-bar.component";
 import { PostData, PostsFromOneUser } from "src/app/types/post-data-types";
+import { ImageSelectService } from "../services/image-select.service";
+import { ImageSelectComponent } from "./image-select/image-select.component";
 
 @Component({
   selector: "app-main",
@@ -24,12 +26,23 @@ import { PostData, PostsFromOneUser } from "src/app/types/post-data-types";
     FeedComponent,
     ExploreComponent,
     LeftBarComponent,
+    ImageSelectComponent,
   ],
   templateUrl: "./main.component.html",
   styleUrls: ["./main.component.scss"],
 })
 export class MainComponent {
-  constructor(private supabase: SupabaseService, private nest: NestService) {}
+  hideImageSelect!: string;
+  constructor(
+    private supabase: SupabaseService,
+    private nest: NestService,
+    private imageSelectService: ImageSelectService
+  ) {
+    this.imageSelectService.getSelectedImage.subscribe((image) => {
+      this.hideImageSelect = image;
+      // console.log("setting selected image to: ", this.selectedImage);
+    });
+  }
   @Output() data!: PostsFromOneUser;
   createUser() {
     console.log(this.nest.createUser());

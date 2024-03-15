@@ -1,12 +1,12 @@
 import { Component } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { PillComponent } from "./pill/pill.component";
+import { PostWidgetComponent } from "../post-widget/post-widget.component";
 import { AddCommentComponent } from "./add-comment/add-comment.component";
 
 @Component({
   selector: "app-comments-widget",
   standalone: true,
-  imports: [CommonModule, PillComponent, AddCommentComponent],
+  imports: [CommonModule, AddCommentComponent, PostWidgetComponent],
   templateUrl: "./comments-widget.component.html",
   styleUrls: ["./comments-widget.component.scss"],
 })
