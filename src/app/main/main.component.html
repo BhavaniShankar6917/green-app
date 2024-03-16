@@ -1,13 +1,7 @@
-<nav>
-  <h1 class="green-font">Green</h1>
-</nav>
 <div class="cont-main">
   <app-left-bar (homeClicked)="onHomeClicked($event)"></app-left-bar>
   <div class="cont-main-section">
-    <app-icons-tab></app-icons-tab>
-    <div class="cont-feed-section">
-      <app-feed [postData]="data"></app-feed>
-    </div>
+    <router-outlet></router-outlet>
   </div>
   <app-explore></app-explore>
   <app-image-select [class.display-none]="!hideImageSelect"></app-image-select>

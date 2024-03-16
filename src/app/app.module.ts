@@ -7,11 +7,15 @@ import {
   NgModel,
   NgForm,
 } from "@angular/forms";
+import { RouterModule } from "@angular/router";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { LoginComponent } from "./login/login.component";
 import { HttpClientModule } from "@angular/common/http";
 import { LeftBarComponent } from "./main/left-bar/left-bar.component";
+import { MainComponent } from "./main/main.component";
+import { ContentPaneComponent } from "./content-pane/content-pane.component";
+import { FeedComponent } from "./shared/feed/feed.component";
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -22,8 +26,14 @@ import { LeftBarComponent } from "./main/left-bar/left-bar.component";
     LoginComponent,
     LoginDialogBoxComponent,
     LeftBarComponent,
+    MainComponent,
   ],
-  exports: [LoginComponent, LoginDialogBoxComponent, HttpClientModule],
+  exports: [
+    LoginComponent,
+    LoginDialogBoxComponent,
+    HttpClientModule,
+    MainComponent,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

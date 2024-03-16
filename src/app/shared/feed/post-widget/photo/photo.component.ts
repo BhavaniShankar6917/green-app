@@ -15,7 +15,8 @@ export class PhotoComponent {
   @Input() set photoUrlData(value: string | null) {
     this.photoURL = value == null ? "" : value;
   }
-  onPhotoClick(image: HTMLImageElement) {
+  onPhotoClick(e: Event, image: HTMLImageElement) {
+    e.stopPropagation();
     console.log("clicked YESSS");
     this.imageSelectService.setSelectedImage(image.src);
     console.log(this.imageSelectService.selectedImage.value);

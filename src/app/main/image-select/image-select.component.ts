@@ -19,7 +19,9 @@ export class ImageSelectComponent {
       console.log("setting selected image to: ", this.selectedImage);
     });
   }
-
+  onClickOfClose() {
+    this.imageSelectService.setSelectedImage("");
+  }
   onClick(i: HTMLImageElement) {
     this.coordinates = `${i.getBoundingClientRect().left} ${
       i.getBoundingClientRect().top

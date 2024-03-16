@@ -3,7 +3,7 @@ import { Injectable } from "@angular/core";
 import { environment } from "../environment";
 import { HttpClient, HttpHeaders, HttpResponse } from "@angular/common/http";
 import { ActivatedRoute, Router } from "@angular/router";
-
+import { PostsFromOneUser } from "../types/post-data-types";
 import { createClient, SupabaseClient } from "@supabase/supabase-js";
 import { Observable } from "rxjs";
 
@@ -12,6 +12,7 @@ import { Observable } from "rxjs";
 })
 export class SupabaseService {
   private supabase: SupabaseClient;
+  dataForPostsOfOneUser!: Observable<PostsFromOneUser>;
   content: any;
   constructor(
     private route: Router,
@@ -29,7 +30,7 @@ export class SupabaseService {
       //   },
       // }
     );
-
+    this.getPostsOfOneUser();
     // this.supabase.auth.setSession({ access_token: "", refresh_token: "" });
   }
   signin(email: string, password: string) {
@@ -111,14 +112,14 @@ export class SupabaseService {
       console.log(next, typeof next);
     });
   }
+
   async getPostsOfOneUser() {
-    // let content;
-    return await this.http.get(
+    this.dataForPostsOfOneUser = this.http.get(
       "http://localhost:3000/posts/755edc7a-a9bc-4d9d-a573-03d4fe5fd759",
       {
         withCredentials: true,
       }
-    );
+    ) as Observable<PostsFromOneUser>;
   }
   async getLikesInfo(postid: number, username: string) {
     return await this.supabase

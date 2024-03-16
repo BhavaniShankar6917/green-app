@@ -1,32 +1,25 @@
-import {
-  Component,
-  Input,
-  Output,
-  EventEmitter,
-  OnChanges,
-  SimpleChanges,
-} from "@angular/core";
+import { Component, Input, Output } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { SupabaseService } from "../services/supabase.service";
-import { IconsTabComponent } from "./icons-tab/icons-tab.component";
-import { FeedComponent } from "./feed/feed.component";
+
 import { ExploreComponent } from "./explore/explore.component";
 import { NestService } from "../services/nest.service";
 import { LeftBarComponent } from "./left-bar/left-bar.component";
 import { PostData, PostsFromOneUser } from "src/app/types/post-data-types";
 import { ImageSelectService } from "../services/image-select.service";
 import { ImageSelectComponent } from "./image-select/image-select.component";
-
+import { RouterModule } from "@angular/router";
+import { ContentPaneComponent } from "../content-pane/content-pane.component";
 @Component({
   selector: "app-main",
   standalone: true,
   imports: [
     CommonModule,
-    IconsTabComponent,
-    FeedComponent,
     ExploreComponent,
     LeftBarComponent,
     ImageSelectComponent,
+    RouterModule,
+    ContentPaneComponent,
   ],
   templateUrl: "./main.component.html",
   styleUrls: ["./main.component.scss"],
@@ -57,13 +50,7 @@ export class MainComponent {
   }
 
   async getPosts() {
-    let subscription = (await this.supabase.getPostsOfOneUser()).subscribe({
-      next: (value) => {
-        console.log(value);
-        this.data = value as PostsFromOneUser;
-      },
-    });
-    return subscription;
+    this.supabase.getPostsOfOneUser();
   }
 }
 

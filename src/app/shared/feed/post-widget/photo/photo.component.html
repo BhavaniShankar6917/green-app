@@ -4,6 +4,6 @@
     [attr.src]="photoURL"
     alt="photo"
     #image
-    (click)="onPhotoClick(image)"
+    (click)="onPhotoClick($event, image)"
   />
 </div>
