@@ -1,0 +1,8 @@
+<div class="cont-profile-component">
+  <app-details></app-details>
+  <app-sections-tab
+    (outputSelectedTab)="setSelectedTab($event)"
+  ></app-sections-tab>
+</div>
+<app-media *ngIf="selectedTab == 'media'"></app-media>
+<app-feed [postData]="data" *ngIf="selectedTab == 'posts'"></app-feed>

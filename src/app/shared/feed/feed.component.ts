@@ -26,22 +26,11 @@ export class FeedComponent {
     private imageSelectService: ImageSelectService,
     private router: Router,
     private supabase: SupabaseService
-  ) {
-    // this.imageSelectService.getSelectedImage.subscribe((image) => {
-    //   this.hideImageSelect = image;
-    //   // console.log("setting selected image to: ", this.selectedImage);
-    // });
-    this.supabase.dataForPostsOfOneUser.subscribe({
-      next: (value) => {
-        this.data = value;
-        console.log(value);
-      },
-    });
-  }
+  ) {}
   // @Output() commentsDataAsArray!: CommentsData[];
   postDataAsArray!: PostData[];
-  @Input() set postData(value: PostsFromOneUser) {
-    if (value != undefined) this.postDataAsArray = value!.posts;
+  @Input() set postData(value: PostData[]) {
+    if (value != undefined) this.postDataAsArray = value;
   }
   // onClickOpenPost(postData: PostData) {
   //   console.log("Post id", postData.id);

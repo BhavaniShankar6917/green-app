@@ -4,11 +4,12 @@ export type PostData = {
   photo_url: string | null;
   created_at: string;
   likes: number;
+  media: boolean;
 };
 
 export type PostsFromOneUser = {
   posts: PostData[];
-  comments: CommentsData[];
+  // comments: CommentsData[];
 };
 
 export type CommentsData = {

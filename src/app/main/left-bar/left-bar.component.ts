@@ -1,10 +1,11 @@
 import { Component, Output, EventEmitter } from "@angular/core";
 import { CommonModule } from "@angular/common";
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: "app-left-bar",
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: "./left-bar.component.html",
   styleUrls: ["./left-bar.component.scss"],
 })

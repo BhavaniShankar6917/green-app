@@ -1,6 +1,7 @@
 .cont-main {
   display: grid;
   grid-template-columns: 20% 50% 30%;
+  max-height: calc(100vh - 48px);
 }
 .cont-main-section {
   display: flex;
@@ -13,4 +14,9 @@
   //   display: flex;
   //   min-width: 100%;
   // }
+}
+app-explore {
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
 }

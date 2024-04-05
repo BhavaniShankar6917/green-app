@@ -1,0 +1,46 @@
+@import "/src/styles/styles";
+@import "https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css";
+
+.cont-profile-info,
+.cont-profile {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+}
+.cont-followers,
+.cont-following {
+  display: flex;
+  gap: 0.35rem;
+}
+.cont-followers:hover,
+.cont-following:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.cont-followers-following {
+  display: flex;
+  gap: 1rem;
+}
+.cont-pic-and-edit {
+  display: flex;
+  justify-content: space-between;
+}
+.edit-profile {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.cont-add-profile-image {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #f8f9fa;
+  position: relative;
+}
+.cont-input-profile-image {
+  position: relative;
+}
+.cont-edit-image {
+  align-items: center;
+  justify-items: center;
+}

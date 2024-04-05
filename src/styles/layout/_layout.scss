@@ -2,3 +2,15 @@
   margin: 0;
   box-sizing: border-box;
 }
+.absolute {
+  position: absolute;
+}
+.relative {
+  position: relative;
+}
+.absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}

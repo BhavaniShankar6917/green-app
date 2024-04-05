@@ -9,7 +9,7 @@ import { PostData, PostsFromOneUser } from "src/app/types/post-data-types";
 import { ImageSelectService } from "../services/image-select.service";
 import { ImageSelectComponent } from "./image-select/image-select.component";
 import { RouterModule } from "@angular/router";
-import { ContentPaneComponent } from "../content-pane/content-pane.component";
+import { ContentPaneComponent } from "./content-pane/content-pane.component";
 @Component({
   selector: "app-main",
   standalone: true,

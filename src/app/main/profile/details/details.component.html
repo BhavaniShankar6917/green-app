@@ -1,0 +1,125 @@
+<div class="cont-profile">
+  <div class="block">
+    <h2 class="w-regular">Bhavani Shankar</h2>
+    <p class="w-small">4 posts</p>
+  </div>
+
+  <div class="cont-profile-info block mb-2">
+    <div class="fixed-grid has-4-cols">
+      <div class="grid">
+        <div class="cell">
+          <div class="cont-pic-and-edit">
+            <div class="cont-profile-image pic-large-circle">
+              <img
+                src="https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+        <div class="cell is-col-from-end-2">
+          <button
+            class="js-modal-trigger is-primary is-rounded button"
+            data-target="modal-js-example"
+            (click)="openCloseModal()"
+          >
+            Edit profile
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="cont-profile-names mb-2">
+      <div class="cont-display-name content is-small mb-0">
+        <h1 class="mb-0">Bhavani Shankar</h1>
+      </div>
+      <div class="cont-user-name content is-small">
+        <p class="grey-dark">bhavani_shankar</p>
+      </div>
+    </div>
+    <div class="cont-bio grey-extra-dark content">
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis
+        voluptate veniam sequi quis blanditiis tenetur tempore maxime accusamus
+        fugiat minima saepe iste, rerum ad ea beatae? Beatae dolore aperiam
+        magnam!
+      </p>
+    </div>
+  </div>
+  <div class="cont-followers-following block">
+    <div class="cont-followers">
+      <p class="follower-count w-bold">
+        12 <span class="grey-dark">Followers</span>
+      </p>
+    </div>
+    <div class="cont-following">
+      <p class="following-count w-bold">
+        12 <span class="grey-dark">Following</span>
+      </p>
+    </div>
+  </div>
+</div>
+<div class="modal" id="modal">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Edit profile</p>
+      <button
+        class="delete"
+        aria-label="close"
+        (click)="openCloseModal()"
+      ></button>
+    </header>
+    <section class="modal-card-body">
+      <div class="fixed-grid has-2-cols">
+        <div class="grid cont-edit-image">
+          <div class="cell">
+            <div class="file relative">
+              <figure class="pic-large-circle">
+                <img
+                  src="https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                  alt=""
+                />
+              </figure>
+            </div>
+          </div>
+          <div class="cell relative">
+            <input
+              type="file"
+              accept="image/png, image/jpg"
+              id="edit-image"
+              class="display-none absolute"
+            />
+            <label class="is-rounded is-primary button" for="edit-image"
+              >Edit image</label
+            >
+          </div>
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Name</label>
+        <div class="control">
+          <input
+            class="input"
+            type="text"
+            placeholder=""
+            value="Bhavani Shankar"
+          />
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Add a bio</label>
+        <div class="control">
+          <textarea class="textarea" placeholder="Textarea">
+Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae iure blanditiis assumenda ut vitae cupiditate. Impedit error labore dolore sapiente ex quas temporibus incidunt placeat nisi, provident dolor voluptatem iure.</textarea
+          >
+        </div>
+      </div>
+    </section>
+    <footer class="modal-card-foot">
+      <div class="buttons">
+        <button class="button is-success">Save changes</button>
+        <button class="button">Cancel</button>
+      </div>
+    </footer>
+  </div>
+</div>

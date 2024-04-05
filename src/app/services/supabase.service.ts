@@ -13,6 +13,7 @@ import { Observable } from "rxjs";
 export class SupabaseService {
   private supabase: SupabaseClient;
   dataForPostsOfOneUser!: Observable<PostsFromOneUser>;
+  dataForPostsWithMediaOfOneUser!: Observable<PostsFromOneUser>;
   content: any;
   constructor(
     private route: Router,
@@ -31,6 +32,7 @@ export class SupabaseService {
       // }
     );
     this.getPostsOfOneUser();
+    this.getPostsWithMediaOfOneUser();
     // this.supabase.auth.setSession({ access_token: "", refresh_token: "" });
   }
   signin(email: string, password: string) {
@@ -116,6 +118,14 @@ export class SupabaseService {
   async getPostsOfOneUser() {
     this.dataForPostsOfOneUser = this.http.get(
       "http://localhost:3000/posts/755edc7a-a9bc-4d9d-a573-03d4fe5fd759",
+      {
+        withCredentials: true,
+      }
+    ) as Observable<PostsFromOneUser>;
+  }
+  async getPostsWithMediaOfOneUser() {
+    this.dataForPostsWithMediaOfOneUser = this.http.get(
+      "http://localhost:3000/posts/755edc7a-a9bc-4d9d-a573-03d4fe5fd759/media",
       {
         withCredentials: true,
       }

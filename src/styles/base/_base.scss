@@ -35,8 +35,8 @@
   display: flex;
   align-items: center;
   & > img {
-    width: 4rem;
-    height: 4rem;
+    width: 6rem;
+    height: 6rem;
     border-radius: 50%;
   }
 }
@@ -66,6 +66,12 @@
 .display-none {
   display: none;
 }
+.display-inline {
+  display: inline-block;
+}
+.hidden {
+  visibility: hidden;
+}
 .icon-hover {
   &:hover {
     background-image: linear-gradient(
@@ -79,4 +85,10 @@
 .pill-shadow-border {
   box-shadow: inset 0 0 10px rgba($color-green, 0.1);
   border: 1px solid $color-grey-regular;
+}
+.z-index-1 {
+  z-index: 1;
+}
+.z-index-minus-1 {
+  z-index: -1;
 }
