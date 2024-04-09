@@ -33,7 +33,6 @@ export class MainComponent {
   ) {
     this.imageSelectService.getSelectedImage.subscribe((image) => {
       this.hideImageSelect = image;
-      // console.log("setting selected image to: ", this.selectedImage);
     });
   }
   @Output() data!: PostsFromOneUser;
@@ -43,7 +42,6 @@ export class MainComponent {
   async onHomeClicked(clicked: boolean) {
     if (clicked) {
       this.getPosts();
-      // console.log(this.postData);
     } else {
       console.log("No cannot click now!!");
     }

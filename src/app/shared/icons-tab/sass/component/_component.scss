@@ -1,5 +1,5 @@
 @import "../base/animations";
-.icon {
+.icons {
   position: relative;
   display: inline-flex;
   border-radius: 50%;
@@ -16,7 +16,7 @@
     right: 1%;
   }
 }
-.icon {
+.icons {
   transition: all 0.3s;
 }
 .icon-write-something:hover {

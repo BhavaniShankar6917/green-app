@@ -32,9 +32,9 @@ export class FeedComponent {
   @Input() set postData(value: PostData[]) {
     if (value != undefined) this.postDataAsArray = value;
   }
-  // onClickOpenPost(postData: PostData) {
-  //   console.log("Post id", postData.id);
-  //   this.router.navigate([`/profile/${postData.id}`], { state: { postData } });
-  // }
-  onClickOpenPost() {}
+  onClickOpenPost(postData: PostData) {
+    console.log("Post id", postData.id);
+    this.router.navigate([`/post/${postData.id}`], { state: { postData } });
+  }
+  // onClickOpenPost() {}
 }

@@ -2,6 +2,8 @@ import { Component, Input } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { BehaviorSubject } from "rxjs";
 import { ImageSelectService } from "src/app/services/image-select.service";
+import { Router } from "@angular/router";
+
 @Component({
   selector: "app-photo",
   standalone: true,

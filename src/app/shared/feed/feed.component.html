@@ -1,9 +1,8 @@
-<div
-  class="cont-feed"
-  (click)="onClickOpenPost()"
-  *ngFor="let post of postDataAsArray"
->
-  <app-post-widget [postData]="post"></app-post-widget>
+<div class="cont-feed" *ngFor="let post of postDataAsArray">
+  <app-post-widget
+    [postData]="post"
+    (click)="onClickOpenPost(post)"
+  ></app-post-widget>
   <app-comments-widget></app-comments-widget>
 </div>
 <!-- <h1>Hey there!</h1> -->

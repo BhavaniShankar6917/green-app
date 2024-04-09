@@ -10,9 +10,10 @@ import {
 } from "@angular/router";
 import { LoginComponent } from "./login/login.component";
 import { MainComponent } from "./main/main.component";
-// import { ProfileComponent } from ".main/profile/profile.component";
+
 import { ContentPaneComponent } from "./main/content-pane/content-pane.component";
 import { ProfileComponent } from "./main/profile/profile.component";
+import { PostComponent } from "./main/post/post.component";
 
 const routes: Routes = [
   { path: "login", component: LoginComponent },
@@ -27,6 +28,10 @@ const routes: Routes = [
       {
         path: "profile",
         component: ProfileComponent,
+      },
+      {
+        path: "post/:id",
+        component: PostComponent,
       },
     ],
   },
